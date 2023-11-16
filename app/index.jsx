@@ -1,5 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   widthPercentageToDP as wp,
@@ -7,8 +7,17 @@ import {
 } from "react-native-responsive-screen";
 import { LinearGradient } from "expo-linear-gradient";
 import Animated, { FadeIn, FadeInDown, FadeOut } from "react-native-reanimated";
+import { useRouter } from "expo-router";
 
 const Index = () => {
+  const router = useRouter();
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     router.push("login");
+  //   }, 3000);
+  // }, []);
+
   return (
     <View className="flex-1 justify-end">
       <StatusBar style="light" />
@@ -43,6 +52,9 @@ const Index = () => {
         </Animated.View>
         <Animated.View entering={FadeInDown.delay(200).springify()}>
           <TouchableOpacity
+            onPress={() => router.push("home")}
+            entering={FadeInDown.delay(200).springify()}
+            exiting={FadeOut.delay(200).springify()}
             style={{ height: hp(7), width: wp(80) }}
             className="bg-rose-500 flex items-center justify-center mx-auto rounded-full "
           >
