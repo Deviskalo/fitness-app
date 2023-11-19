@@ -26,7 +26,7 @@ const ImageSlider = () => {
 
 export default ImageSlider;
 
-const ItemCard = ({ item, index }, parallaxProps) => {
+const ItemCard = ({ item, index }, Props) => {
   return (
     <View style={{ width: wp(100) - 70, height: hp(25) }}>
       <ParallaxImage
@@ -34,7 +34,7 @@ const ItemCard = ({ item, index }, parallaxProps) => {
         containerStyle={{ borderRadius: 30, flex: 1 }}
         style={{ resizeMode: "contain" }}
         parallaxFactor={0.3}
-        {...parallaxProps}
+        {...Props}
       />
     </View>
   );

@@ -8,6 +8,7 @@ import {
 import { StatusBar } from "expo-status-bar";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ImageSlider from "../components/ImageSlider";
+import BodyParts from "../components/BodyParts";
 
 const home = () => {
   return (
@@ -48,6 +49,10 @@ const home = () => {
       {/* image slider */}
       <View>
         <ImageSlider />
+      </View>
+
+      <View className="flex-1">
+        <BodyParts />
       </View>
     </SafeAreaView>
   );
